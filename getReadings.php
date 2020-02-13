@@ -11,11 +11,11 @@ $to =  mysqli_real_escape_string($conn, $_REQUEST['to']);
 
 $query = "SELECT * FROM `$uid` WHERE `at` BETWEEN '$from' AND '$to'";
 
-$result = $conn->query($query);
+$result = mysqli_query($conn, $query);
 
-class respo {}
-$r = new respo();
-$r->rows = $result->fetch_row();
+$rows = array(mysqli_fetch_row($result));
 echo json_encode($r);
+mysqli_free_result($result);
+mysqli_close($conn);
 
 ?>
