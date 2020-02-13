@@ -18,7 +18,7 @@ $usr =  mysqli_real_escape_string($conn, $_REQUEST['usr']);
  $query  = "UPDATE `Sensor` SET `loc`='$loc', `co2min`='$cmin', `co2max`='$cmax'" ;
  $query .= ", `tempmin`='$tmin', `tempmax`='$tmax' WHERE `uid`='$uid' AND `username`='$usr'";
 
- $result = $conn->query($query);
+ $result = mysqli_query($conn, $query);
 
  if($result) {
      echo $uid.' '.$loc;

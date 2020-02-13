@@ -12,7 +12,7 @@
  // echo $user;
  // echo $pwd;
  $query =  "INSERT into `Users`(`name`, `username`, `mail`, `mobile`, `password`) VALUES ('$name', '$name', '$mail', '$mobile', '$pwd')";
- $result = $conn->query($query);
+ $result = mysqli_query($conn, $query);
 
  print_r($result);
 ?>
