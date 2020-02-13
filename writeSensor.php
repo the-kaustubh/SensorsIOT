@@ -18,14 +18,15 @@ $mac =  mysqli_real_escape_string($conn, $_REQUEST['mac']);
 
  $query = "INSERT INTO `Sensor`(`uid`, `loc`, `co2min`, `co2max`, `tempmin`, `tempmax`, `username`, `machinename`) values ('$uid', '$loc', '$cmin', '$cmax', '$tmin', '$tmax', '$usr', '$mac')" ;
 
- $result = $conn->query($query);
+ $result = mysqli_query($conn, $query);
 
 $sql = "CREATE TABLE `$uid` (
         `at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
         `temperature` double NOT NULL,
         `co2`  double NOT NULL,
         `humidity` double NOT NULL)";
-        $conn->query($sql);
+        mysqli_query($conn, $sql);
+
  if($result) {
      echo $uid.' '.$loc;
  }

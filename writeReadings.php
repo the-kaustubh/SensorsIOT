@@ -11,9 +11,6 @@ $co2 =  mysqli_real_escape_string(  $conn, $_REQUEST['co2']);
 
 $query = "INSERT INTO `$uid`(`temperature`, `humidity`, `co2`) VALUES ('$temp', '$hum', '$co2')";
 
-echo $query;
-$result = $conn->query($query);
-//if(isset($result)) {
-// echo 'ok';:
-//}
+// echo $query;
+$result = mysqli_query($conn, $query);
 ?>
