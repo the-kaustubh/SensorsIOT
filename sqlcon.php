@@ -6,10 +6,9 @@
     // define('ROOT_DIR', 'http://first-app-of-mine.herouapp.com/');
     // define('ROOT_DIR_LOCAL', 'http://localhost/');
     
-    $conn = new mysqli(SERVER, username, password, DB);
-    if ($mysqli->connect_error) {
-    die('Connect Error (' . $mysqli->connect_errno . ') '
-            . $mysqli->connect_error);
+    $conn = mysqli_connect(SERVER, username, password, DB);
+    if (!$conn) {
+    die('Connect Error ');
     }
     // echo $conn;
 ?>
