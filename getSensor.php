@@ -15,16 +15,14 @@
 
  // echo $query;
  // echo $query.'<br';
- $result = $conn->query($query);
+ $result = mysqli_query($conn, $query);
 
- class respo {}
- $r = new respo();
  // echo json_encode($r);
- echo $result->num_rows."\n";
+ echo mysqli_num_rows($result)."\n";
  for($i = 0 ; $i < $result->num_rows; $i++) {
-   $r->rows = $result->fetch_row();
+   $rows = mysqli_fetch_row($result);
 
-   foreach ($r->rows as $key) {
+   foreach ($rows as $key) {
      echo $key."\n";
    }
  }
