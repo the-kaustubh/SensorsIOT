@@ -8,14 +8,12 @@ include 'sqlcon.php';
 $uid =  mysqli_real_escape_string($conn, $_REQUEST['uid']);
 $query = "SELECT * FROM `$uid` order by `at` DESC LIMIT 1";
 
-$result = $conn->query($query);
+$result = mysqli_query($conn, $query);
 
-class respo {}
-$r = new respo();
-$r->rows = $result->fetch_row();
-echo $r->rows[1]."\n";
-echo $r->rows[2]."\n";
-echo $r->rows[3];
+$rows = mysqli_fetch_row($result);
+$rows[1]."\n";
+$rows[2]."\n";
+$rows[3];
 
 
 ?>

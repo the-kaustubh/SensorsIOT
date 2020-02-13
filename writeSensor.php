@@ -16,7 +16,7 @@ $tmax =  mysqli_real_escape_string($conn, $_REQUEST['tmax']);
 $usr =  mysqli_real_escape_string($conn, $_REQUEST['usr']);
 $mac =  mysqli_real_escape_string($conn, $_REQUEST['mac']);
 
- $query = "INSERT INTO `Sensor`(`uid`, `loc`, `co2min`, `co2max`, `tempmin`, `tempmax`, `username`, `machinename`) values ('$uid', '$loc', '$cmin', '$cmax', '$tmin', '$tmax', '$usr', '$mac')" ;
+ $query = "INSERT INTO `sensor`(`uid`, `loc`, `co2min`, `co2max`, `tempmin`, `tempmax`, `username`, `machinename`) values ('$uid', '$loc', '$cmin', '$cmax', '$tmin', '$tmax', '$usr', '$mac')" ;
 
  $result = mysqli_query($conn, $query);
 

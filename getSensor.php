@@ -8,18 +8,18 @@
  $user =  mysqli_real_escape_string( $conn, $_REQUEST['user']);
  // echo $user;
  if(strcmp($user, "Admin")) {
-   $query =  "SELECT * from `Sensor` where `username` like '$user' order by `uid`";
+   $query =  "SELECT * from `sensor` where `username` like '$user' order by `uid`";
  } else {
-   $query =  "SELECT * from `Sensor` order by `uid`";
+   $query =  "SELECT * from `sensor` order by `uid`";
  }
 
  // echo $query;
  // echo $query.'<br';
  $result = mysqli_query($conn, $query);
-
+ $len = mysqli_num_rows($result);
  // echo json_encode($r);
- echo mysqli_num_rows($result)."\n";
- for($i = 0 ; $i < $result->num_rows; $i++) {
+ echo $len."\n";
+ for($i = 0 ; $i < $len; $i++) {
    $rows = mysqli_fetch_row($result);
 
    foreach ($rows as $key) {

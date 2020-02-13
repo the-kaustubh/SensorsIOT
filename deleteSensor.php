@@ -10,12 +10,12 @@
 $uid =  mysqli_real_escape_string($conn, $_REQUEST['uid']);
 $usr =  mysqli_real_escape_string($conn, $_REQUEST['user']);
 
- $query = "SELECT * FROM `Sensor` WHERE `uid`='$uid' AND `username`='$usr'" ;
+ $query = "SELECT * FROM `sensor` WHERE `uid`='$uid' AND `username`='$usr'" ;
 
  // $result = $conn->query($query);
   $result = mysqli_query($conn, $query);
   if(mysqli_num_rows($result) == 1){
-    $query2 = "DELETE FROM `Sensor` WHERE `uid`='$uid' AND `username`='$usr'" ;
+    $query2 = "DELETE FROM `sensor` WHERE `uid`='$uid' AND `username`='$usr'" ;
 
     $result = mysqli_query($conn, $query2);
     $sql = "DROP TABLE `$uid`";

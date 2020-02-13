@@ -8,7 +8,7 @@
  $uid =  mysqli_real_escape_string( $conn, $_REQUEST['uid']);
  $user =  mysqli_real_escape_string( $conn, $_REQUEST['user']);
 
- $query =  "SELECT * from `Sensor` where `username` = '$user' AND `uid` = '$uid' limit 1";
+ $query =  "SELECT * from `sensor` where `username` = '$user' AND `uid` = '$uid' limit 1";
 
  $result = mysqli_query($conn, $query);
  $len = mysqli_num_rows($result);

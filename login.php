@@ -8,11 +8,11 @@
  $mail =  mysqli_real_escape_string( $conn, $_REQUEST['mail']);
  $pwd =  md5(mysqli_real_escape_string( $conn, $_REQUEST['pwd']));
  // echo $user;
- $query =  "SELECT * from `Users` where `mail` = '$mail' and `password`='$pwd'";
+ $query =  "SELECT * from `users` where `mail` = '$mail' and `password`='$pwd'";
 
  $result = mysqli_query($conn, $query);
 
- 
+
  if(mysqli_num_rows($result) == 1 ) {
    echo mysqli_fetch_row($result)[1];
    // echo $result->fetch_row()[1];

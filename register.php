@@ -11,7 +11,7 @@
  $pwd =  md5(mysqli_real_escape_string( $conn, $_REQUEST['pwd']));
  // echo $user;
  // echo $pwd;
- $query =  "INSERT into `Users`(`name`, `username`, `mail`, `mobile`, `password`) VALUES ('$name', '$name', '$mail', '$mobile', '$pwd')";
+ $query =  "INSERT into `users`(`name`, `username`, `mail`, `mobile`, `password`) VALUES ('$name', '$name', '$mail', '$mobile', '$pwd')";
  $result = mysqli_query($conn, $query);
 
  print_r($result);
