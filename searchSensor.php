@@ -10,16 +10,12 @@
 
  $query =  "SELECT * from `Sensor` where `username` = '$user' AND `uid` = '$uid' limit 1";
 
- $result = $conn->query($query);
+ $result = mysqli_query($conn, $query);
+ $len = mysqli_num_rows($result);
+ for($i = 0 ; $i < $len; $i++) {
+   $rows = mysqli_fetch_row($result);
 
- class respo {}
- $r = new respo();
- 
-
- for($i = 0 ; $i < $result->num_rows; $i++) {
-   $r->rows = $result->fetch_row();
-
-   foreach ($r->rows as $key) {
+   foreach ($rows as $key) {
      echo $key."\n";
    }
  }
