@@ -10,11 +10,11 @@
  // echo $user;
  $query =  "SELECT * from `Users` where `mail` = '$mail' and `password`='$pwd'";
 
- $result = $conn->query($query);
+ $result = mysqli_query($conn, $query);
 
- class respo {}
- $r = new respo();
- if($result->num_rows == 1 ) {
-   echo $result->fetch_row()[1];
+ 
+ if(mysqli_num_rows($result) == 1 ) {
+   echo mysqli_fetch_row($result)[1];
+   // echo $result->fetch_row()[1];
  }
 ?>
