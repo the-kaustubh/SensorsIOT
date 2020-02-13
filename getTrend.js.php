@@ -12,9 +12,9 @@ $user  =  mysqli_real_escape_string($conn, $_REQUEST['user']);
 
 $query = "SELECT * FROM `$uid`";
 
-$result = $conn->query($query);
+$result = mysqli_query($conn, $query);
 
-$r = $result->fetch_all(MYSQLI_ASSOC);
+$r = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 echo json_encode($r);
 

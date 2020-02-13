@@ -12,18 +12,16 @@ $user  =  mysqli_real_escape_string($conn, $_REQUEST['user']);
 
 $query = "SELECT * FROM `$uid`";
 
-$result = $conn->query($query);
+$result = mysqli_query($conn, $query);
 
-class respo {}
-$r = new respo();
-$r->rows = $result->fetch_row();
-echo $result->num_rows."\n";
-while($r->rows) {
-  echo $r->rows[0]."\n";
-  echo $r->rows[1]."\n";
-  echo $r->rows[2]."\n";
-  echo $r->rows[3]."\n";
-  $r->rows = $result->fetch_row();
+$rows = array(mysqli_fetch_row($result));
+echo mysqli_num_rows($result)."\n";
+while($rows) {
+  echo $rows[0]."\n";
+  echo $rows[1]."\n";
+  echo $rows[2]."\n";
+  echo $rows[3]."\n";
+  $rows = mysqli_fetch_row($result);
 }
 
 
